@@ -4,7 +4,8 @@
   "description": "",
   "main": "bs-config.js",
   "scripts": {
-    "start": "browser-sync start --config config.js"
+    "start": "node index.js",
+    "poststart": "browser-sync start --config config.js"
   },
   "author": "Matt Macartney",
   "license": "ISC",

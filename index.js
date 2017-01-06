@@ -35,13 +35,16 @@ function updateConfigJson(ipAddress) {
 function saveJsonToFile(data) {
   fs.writeFile(configFilePath, data, function(error) {
     if (error) throw error;
+    console.log('Saved config to file');
   });
 }
 
 function init() {
   getIPv4Address().then(function(ipAddress) {
+    console.log('Your IP Adress is ', ipAddress);
     return updateConfigJson(ipAddress);
   }).then(function(data) {
+    console.log('Saving new config to file');
     return saveJsonToFile(data);
   }).catch(function() {
     console.error('There has been an error');
